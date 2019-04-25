@@ -2,6 +2,9 @@
 The Jira Software Docker Compose file and other information for setting up ASWWU's Jira instance.
 
 ## Installation
+## Database server
+Jira has specific configuration requirements for its database server. In the README for the mysql repository, there are instructions for modifying the ``my.cnf`` file and setting those settings properly.
+
 ## Database
 Jira needs a database to run on in the MySQL server. Yo ucna setup one properly with the following commands.
 

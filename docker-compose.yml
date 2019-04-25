@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  jira:
+    image: cptactionhank/atlassian-jira-software:latest
+    container_name: jira
+    restart: always
+    environment:
+      - CATALINA_OPTS=-Xms768m -Xmx1024m
+      - X_PROXY_NAME=jira.aswwu.com
+      - X_PROXY_PORT=443
+      - X_PROXY_SCHEME=https
+    volumes:
+      - type: volume
+        source: jira
+        target: /var/atlassian/jira
+    ports:
+      - 8001:8080
+    networks:
+      - mysql
+volumes:
+  jira:
+    name: jira
+networks:
+  mysql:
+    external:
+      name: mysql
+
